@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Digital Skills Passport Studio | Skills Passport (স্কিলস পাসপোর্ট)</title>
+  <meta name="description" content="আপনার নিজস্ব ডিজিটাল স্কিলস পাসপোর্ট আইডি তৈরি করুন। লাইভ ৩ডি হলোগ্রাফিক কার্ড জেনারেটর ও স্কিলস ভেরিফিকেশন।">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-bn">
+
+  <!-- 3D Background Canvas -->
+  <div id="bg-canvas-container"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.png" alt="Skills Passport Logo" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav_home">হোম</a></li>
+            <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকটিভস</a></li>
+            <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+            <li><a href="passport.html" class="current-page" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+            <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+            <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাং</button>
+            <button class="lang-btn" data-lang="en" id="lang-btn-en">EN</button>
+          </div>
+
+          <a href="passport.html" class="btn btn-primary btn-glow nav-cta-btn" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="index.html" data-i18n="nav_home">হোম</a>
+          <span class="breadcrumb-separator">/</span>
+          <span data-i18n="nav_generator">পাসপোর্ট আইডি</span>
+        </div>
+
+        <div class="badge-chip">
+          <span class="pulse-dot"></span>
+          <span data-i18n="gen_badge">ইন্টারেক্টিভ টুল</span>
+        </div>
+
+        <h1 class="page-hero-title" data-i18n="gen_title">
+          আপনার নিজস্ব <span class="cyan-gradient-text">৩ডি পাসপোর্ট</span> তৈরি করুন
+        </h1>
+        
+        <p class="page-hero-desc" data-i18n="gen_subtitle">
+          আপনার প্রফেশনাল রোল ও টপ স্কিল সিলেক্ট করে লাইভ ডিজিটাল আইডি জেনারেট করুন।
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Generator Studio -->
+    <section class="section-padding generator-section" style="padding-top: 10px;">
+      <div class="container">
+        
+        <div class="generator-box">
+          <div class="generator-grid">
+            
+            <!-- Controls Side -->
+            <div class="generator-form-side">
+              <div class="form-group">
+                <label for="gen-name-input" data-i18n="gen_label_name">👤 আপনার নাম (Full Name)</label>
+                <input type="text" id="gen-name-input" class="form-input" placeholder="e.g. Tanvir Ahmed" value="Tanvir Ahmed">
+              </div>
+
+              <div class="form-group">
+                <label for="gen-track-select" data-i18n="gen_label_track">🎯 আপনার ক্যারিয়ার ট্র্যাক (Career Track)</label>
+                <select id="gen-track-select" class="form-select">
+                  <option value="fresher">🎓 Fresh Graduate & Job Seeker</option>
+                  <option value="tech">💻 AI & Tech Professional</option>
+                  <option value="corporate" selected>💼 Corporate Executive</option>
+                  <option value="innovator">🚀 Student Innovator / Entrepreneur</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="gen_label_skills">⚡ আপনার শীর্ষ দক্ষতাগুলো সিলেক্ট করুন (Select Skills)</label>
+                <div class="skills-pill-selector">
+                  <span class="skill-toggle-chip active" data-skill="Generative AI">Generative AI</span>
+                  <span class="skill-toggle-chip active" data-skill="EQ & Leadership">EQ & Leadership</span>
+                  <span class="skill-toggle-chip active" data-skill="Data Fluency">Data Fluency</span>
+                  <span class="skill-toggle-chip" data-skill="Executive Comm">Executive Comm</span>
+                  <span class="skill-toggle-chip" data-skill="Agile Strategy">Agile Strategy</span>
+                  <span class="skill-toggle-chip" data-skill="Workflow Automation">Workflow Automation</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-glow" id="gen-download-btn" style="margin-top: 10px;">
+                <span data-i18n="gen_btn_issue">পাসপোর্ট আইডি ইস্যু করুন</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Live 3D Card Preview -->
+            <div class="generator-preview-side">
+              <div class="generated-passport-card" id="generated-passport-card" title="3D Perspective Card">
+                <div class="card-glare"></div>
+                
+                <div class="gen-card-header">
+                  <span class="gen-card-title">SKILLS PASSPORT BD</span>
+                  <span class="gen-card-id" id="gen-card-id">SP-2026-BD8841</span>
+                </div>
+
+                <div class="gen-card-body">
+                  <div class="gen-user-avatar" style="background: #ffffff; padding: 10px;">
+                    <img src="assets/logo-icon.png" alt="Skills Passport" style="width: 100%; height: 100%; object-fit: contain;">
+                  </div>
+                  <h4 class="gen-user-name" id="gen-card-name">Tanvir Ahmed</h4>
+                  <p class="gen-user-role" id="gen-card-role">Corporate Executive</p>
+                  
+                  <div class="gen-skills-list" id="gen-skills-container">
+                    <span class="gen-skill-tag">Generative AI</span>
+                    <span class="gen-skill-tag">EQ & Leadership</span>
+                    <span class="gen-skill-tag">Data Fluency</span>
+                  </div>
+                </div>
+
+                <div class="gen-card-footer">
+                  <div class="gen-status-box">
+                    <span>HI + AI VERIFIED</span>
+                    <strong data-i18n="gen_card_location">ঢাকা, বাংলাদেশ</strong>
+                  </div>
+                  <div class="gen-barcode-box">||| | |||| | |||</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Verification Search Simulation Box -->
+        <div class="detail-box-card" style="margin-top: 50px;">
+          <h3 data-i18n="gen_verify_title">🔍 পাসপোর্ট আইডি ভেরিফিকেশন পোর্টাল</h3>
+          <p data-i18n="gen_verify_desc">যেকোনো স্কিলস পাসপোর্ট আইডির সত্যতা ও ভেরিফিকেশন স্ট্যাটাস সাথে সাথে চেক করুন:</p>
+
+          <div style="display: flex; gap: 14px; max-width: 600px; margin-top: 16px;">
+            <input type="text" class="form-input" id="verify-input" placeholder="e.g. SP-2026-BD8841" value="SP-2026-BD8841">
+            <button class="btn btn-secondary" data-i18n="gen_verify_btn" onclick="alert('✅ Verified! Credential is valid and active in the Skills Passport National Registry.')">
+              ভেরিফাই করুন
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+              <img src="assets/logo.png" alt="Skills Passport" style="height: 52px; width: auto; border-radius: 12px; background: #FFFFFF; padding: 6px 14px; border: 1px solid rgba(31, 150, 156, 0.5); box-shadow: 0 0 18px rgba(31, 150, 156, 0.3);">
+              <p style="font-size: 0.75rem; color: var(--accent-cyan); margin: 0;">HI × AI Upskilling • Dhaka</p>
+            </div>
+            <p data-i18n="footer_desc">হিউম্যান ইন্টেলিজেন্স (HI) ও আর্টিফিশিয়াল ইন্টেলিজেন্সের (AI) সমন্বয়ে ফিউচার-রেডি ক্যারিয়ার গড়ে তোলার শীর্ষস্থানীয় এডটেক প্ল্যাটফর্ম।</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer_city">📍 ঢাকা, বাংলাদেশ • Empowering Global Professionals</p>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col1_title">কোর ফিচার</h5>
+            <ul class="footer-links">
+              <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+              <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+              <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+              <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col2_title">ওয়ার্কশপ ও B2B</h5>
+            <ul class="footer-links">
+              <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_becps">BECPS পার্টনারশিপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_sme">SME ফাউন্ডেশন ট্রেনিং</a></li>
+              <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col3_title">যোগাযোগ</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" data-i18n="comm_fb_btn">অফিসিয়াল ফেসবুক পেজ</a></li>
+              <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+              <li><a href="mailto:info@skillspassport.org">info@skillspassport.org</a></li>
+              <li><a href="#hero" data-i18n="footer_back_top">টপ-এ ফিরে যান ↑</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div data-i18n="footer_copyright">© 2026 Skills Passport (স্কিলস পাসপোর্ট). সর্বস্বত্ব সংরক্ষিত।</div>
+          <div data-i18n="footer_tagline_bottom">Human Intelligence (HI) × Artificial Intelligence (AI) Upskilling Platform</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate & Institutional MoU Portal | Skills Passport (স্কিলস পাসপোর্ট)</title>
+  <meta name="description" content="স্কুল, এডুকেশনাল সোসাইটি (যেমন- BECPS) এবং করপোরেট প্রতিষ্ঠানগুলোর (যেমন- SME Foundation) সাথে আনুষ্ঠানিক MoU ও পার্টনারশিপ পোর্টাল।">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-bn">
+
+  <!-- 3D Background Canvas -->
+  <div id="bg-canvas-container"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.png" alt="Skills Passport Logo" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav_home">হোম</a></li>
+            <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকটিভস</a></li>
+            <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+            <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+            <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+            <li><a href="partnerships.html" class="current-page" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাং</button>
+            <button class="lang-btn" data-lang="en" id="lang-btn-en">EN</button>
+          </div>
+
+          <a href="passport.html" class="btn btn-primary btn-glow nav-cta-btn" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="index.html" data-i18n="nav_home">হোম</a>
+          <span class="breadcrumb-separator">/</span>
+          <span data-i18n="nav_partners">MoU ও পার্টনারস</span>
+        </div>
+
+        <div class="badge-chip">
+          <span class="pulse-dot"></span>
+          <span data-i18n="partners_badge">অফিসিয়াল পার্টনারশিপ</span>
+        </div>
+
+        <h1 class="page-hero-title" data-i18n="partners_title">
+          কর্পোরেট ও ইনস্টিটিউশনাল <span class="gradient-text">MoU পোর্টাল</span>
+        </h1>
+        
+        <p class="page-hero-desc" data-i18n="partners_desc">
+          আপনার প্রতিষ্ঠান, স্কুল, ক্লাব বা কর্পোরেট হাউজের সাথে স্কিলস পাসপোর্টের আনুষ্ঠানিক মেমোরেন্ডাম অব আন্ডারস্ট্যান্ডিং (MoU) সাইন করুন।
+        </p>
+      </div>
+    </section>
+
+    <!-- Partnerships & MoU Portal -->
+    <section class="section-padding partnerships-section" style="padding-top: 10px;">
+      <div class="container">
+        
+        <!-- Partner Badges Banner -->
+        <div class="partners-badge-banner">
+          <div class="partner-banner-label" data-i18n="partner_network_label">স্ট্র্যাটেজিক পার্টনারশিপ নেটওয়ার্ক</div>
+          <div class="partner-logos-row">
+            <div class="partner-logo-pill">
+              <span>🏛️</span>
+              <span data-i18n="partner_becps">BECPS (এডুকেশনাল সোসাইটি)</span>
+            </div>
+            <div class="partner-logo-pill">
+              <span>🏢</span>
+              <span data-i18n="partner_sme">SME ফাউন্ডেশন (কর্পোরেট ও এন্টারপ্রাইজ)</span>
+            </div>
+            <div class="partner-logo-pill">
+              <span>🏫</span>
+              <span data-i18n="partner_schools">স্কুল ও কলেজ এলায়েন্স</span>
+            </div>
+            <div class="partner-logo-pill">
+              <span>🚀</span>
+              <span data-i18n="partner_startups">স্টার্টআপ ইকোসিস্টেম ঢাকা</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MoU Proposal Box -->
+        <div class="mou-proposal-box">
+          <div class="mou-grid">
+            
+            <div class="mou-info-col">
+              <h3 data-i18n="mou_box_title">কর্পোরেট ও প্রাতিষ্ঠানিক প্রপোজাল সাবমিট করুন</h3>
+              <p data-i18n="mou_box_desc">
+                আমরা স্কুল, বিশ্ববিদ্যালয়, এডুকেশনাল সোসাইটি (যেমন- BECPS) এবং করপোরেট প্রতিষ্ঠানগুলোর (যেমন- SME ফাউন্ডেশন) চাহিদামতো কাস্টমাইজড ট্রেনিং মডিউল ও আনুষ্ঠানিক MoU বাস্তবায়ন করি।
+              </p>
+
+              <div class="mou-steps-list">
+                <div class="mou-step-item">
+                  <div class="step-num" data-i18n="step_1">১</div>
+                  <div class="step-content">
+                    <h5 data-i18n="mou_s1_t">প্রপোজাল রিকোয়েস্ট</h5>
+                    <p data-i18n="mou_s1_d">আপনার প্রতিষ্ঠানের প্রাথমিক তথ্য ও প্রয়োজনীয় স্কিল এরিয়া সিলেক্ট করে সাবমিট করুন।</p>
+                  </div>
+                </div>
+
+                <div class="mou-step-item">
+                  <div class="step-num" data-i18n="step_2">২</div>
+                  <div class="step-content">
+                    <h5 data-i18n="mou_s2_t">কনসালটেশন ও কারিকুলাম ম্যাপিং</h5>
+                    <p data-i18n="mou_s2_d">আমাদের এক্সিকিউটিভ টিম আপনার সাথে বসে কারিকুলাম ও লক্ষ্য নির্দিষ্ট করবে।</p>
+                  </div>
+                </div>
+
+                <div class="mou-step-item">
+                  <div class="step-num" data-i18n="step_3">৩</div>
+                  <div class="step-content">
+                    <h5 data-i18n="mou_s3_t">আনুষ্ঠানিক MoU সম্পাদন</h5>
+                    <p data-i18n="mou_s3_d">দীর্ঘমেয়াদী আপস্কিলিং ও যৌথ সার্টিফিকেট প্রদানের মাধ্যমে আনুষ্ঠানিক চুক্তি সাইন।</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- B2B Form -->
+            <form class="b2b-form" id="b2b-mou-form">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label data-i18n="form_org_name">সংস্থার নাম (Organization Name)</label>
+                  <input type="text" name="org_name" class="form-input" placeholder="e.g. BECPS / SME Foundation" required>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="form_org_type">অর্গানাইজেশনের ধরন (Type)</label>
+                  <select name="org_type" class="form-select">
+                    <option value="society" data-i18n="form_type_society">Educational Society (যেমন- BECPS)</option>
+                    <option value="corporate" data-i18n="form_type_corp">Corporate / SME (যেমন- SME Foundation)</option>
+                    <option value="school" data-i18n="form_type_school">School / College</option>
+                    <option value="startup" data-i18n="form_type_startup">Tech Startup</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label data-i18n="form_contact">যোগাযোগকারীর নাম (Contact Person)</label>
+                  <input type="text" name="contact_name" class="form-input" placeholder="Name & Designation" required>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="form_email">অফিসিয়াল ইমেইল (Official Email)</label>
+                  <input type="email" name="org_email" class="form-input" placeholder="email@org.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="form_phone">ফোন নম্বর / WhatsApp</label>
+                <input type="tel" name="org_phone" class="form-input" placeholder="+880 1XXXXXXXXX" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="form_req">প্রস্তাবনার বিস্তারিত বা ট্রেইনিং রিকোয়ারমেন্ট</label>
+                <textarea name="org_message" class="form-textarea" placeholder="Detail your training requirements or cohort expectations..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-glow">
+                <span data-i18n="form_btn_submit">অফিসিয়াল MoU প্রপোজাল পাঠান</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+              <img src="assets/logo.png" alt="Skills Passport" style="height: 52px; width: auto; border-radius: 12px; background: #FFFFFF; padding: 6px 14px; border: 1px solid rgba(31, 150, 156, 0.5); box-shadow: 0 0 18px rgba(31, 150, 156, 0.3);">
+              <p style="font-size: 0.75rem; color: var(--accent-cyan); margin: 0;">HI × AI Upskilling • Dhaka</p>
+            </div>
+            <p data-i18n="footer_desc">হিউম্যান ইন্টেলিজেন্স (HI) ও আর্টিফিশিয়াল ইন্টেলিজেন্সের (AI) সমন্বয়ে ফিউচার-রেডি ক্যারিয়ার গড়ে তোলার শীর্ষস্থানীয় এডটেক প্ল্যাটফর্ম।</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer_city">📍 ঢাকা, বাংলাদেশ • Empowering Global Professionals</p>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col1_title">কোর ফিচার</h5>
+            <ul class="footer-links">
+              <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+              <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+              <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+              <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col2_title">ওয়ার্কশপ ও B2B</h5>
+            <ul class="footer-links">
+              <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_becps">BECPS পার্টনারশিপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_sme">SME ফাউন্ডেশন ট্রেনিং</a></li>
+              <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col3_title">যোগাযোগ</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" data-i18n="comm_fb_btn">অফিসিয়াল ফেসবুক পেজ</a></li>
+              <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+              <li><a href="mailto:info@skillspassport.org">info@skillspassport.org</a></li>
+              <li><a href="#hero" data-i18n="footer_back_top">টপ-এ ফিরে যান ↑</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div data-i18n="footer_copyright">© 2026 Skills Passport (স্কিলস পাসপোর্ট). সর্বস্বত্ব সংরক্ষিত।</div>
+          <div data-i18n="footer_tagline_bottom">Human Intelligence (HI) × Artificial Intelligence (AI) Upskilling Platform</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

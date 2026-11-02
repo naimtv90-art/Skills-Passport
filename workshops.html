@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly 4 Live Workshops | Skills Passport (স্কিলস পাসপোর্ট)</title>
+  <meta name="description" content="প্রতি মাসে ৪টি লাইভ হ্যান্ডস-অন ওয়ার্কশপ: AI প্রম্পটিং, ইমোশনাল ইন্টেলিজেন্স, ক্যাম্পাস-টু-কর্পোরেট এবং স্ট্র্যাটেজিক লিডারশিপ। রেজিস্ট্রেশন করুন।">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-bn">
+
+  <!-- 3D Background Canvas -->
+  <div id="bg-canvas-container"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.png" alt="Skills Passport Logo" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav_home">হোম</a></li>
+            <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+            <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+            <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+            <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            <li><a href="workshops.html" class="current-page" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+            <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাং</button>
+            <button class="lang-btn" data-lang="en" id="lang-btn-en">EN</button>
+          </div>
+
+          <a href="passport.html" class="btn btn-primary btn-glow nav-cta-btn" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="index.html" data-i18n="nav_home">হোম</a>
+          <span class="breadcrumb-separator">/</span>
+          <span data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</span>
+        </div>
+
+        <div class="badge-chip">
+          <span class="pulse-dot"></span>
+          <span data-i18n="workshops_badge">রেগুলার শিডিউল</span>
+        </div>
+
+        <h1 class="page-hero-title" data-i18n="workshops_title">
+          মাসিক ৪টি <span class="gradient-text">লাইভ ওয়ার্কশপ</span>
+        </h1>
+        
+        <p class="page-hero-desc" data-i18n="workshops_subtitle">
+          প্রতি মাসে সরাসরি অভিজ্ঞ মেন্টরদের সাথে হ্যান্ডস-অন প্র্যাকটিস ও বাস্তব স্কিল ডেভেলপমেন্ট।
+        </p>
+      </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section class="section-padding" style="padding-top: 10px;">
+      <div class="container">
+        
+        <!-- Filter Bar -->
+        <div class="workshops-filter-bar">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-category="all" data-i18n="filter_all">সবগুলো ওয়ার্কশপ (All)</button>
+            <button class="filter-btn" data-category="ai" data-i18n="filter_ai">AI & Automation</button>
+            <button class="filter-btn" data-category="soft" data-i18n="filter_soft">ইমোশনাল ইন্টেলিজেন্স (HI)</button>
+            <button class="filter-btn" data-category="career" data-i18n="filter_career">ক্যাম্পাস-টু-কর্পোরেট</button>
+            <button class="filter-btn" data-category="corporate" data-i18n="filter_corporate">কর্পোরেট স্ট্র্যাটেজি</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Workshop Cards Grid -->
+        <div class="workshops-grid" id="workshops-cards-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Workshop Methodology & Benefits Box -->
+        <div class="detail-box-card" style="margin-top: 50px;">
+          <h3 data-i18n="ws_why_title">কেন স্কিলস পাসপোর্টের লাইভ ওয়ার্কশপ সবার চেয়ে আলাদা?</h3>
+          <p data-i18n="ws_why_desc">
+            আমাদের প্রতিটি ওয়ার্কশপ শুধুমাত্র লেকচার নয়, বরং হ্যান্ডস-অন বাস্তব প্রজেক্টভিত্তিক সিমুলেশন।
+          </p>
+
+          <div class="key-takeaway-grid">
+            <div class="takeaway-box">
+              <h4 data-i18n="ws_why_b1_t">🛠️ হ্যান্ডস-অন লাইভ ল্যাব</h4>
+              <p data-i18n="ws_why_b1_d">লাইভ ক্লাসেই প্রম্পটিং, টুলস কনফিগারেশন এবং কেস স্টাডি সমাধান নিশ্চিত করা হয়।</p>
+            </div>
+            <div class="takeaway-box">
+              <h4 data-i18n="ws_why_b2_t">📜 ভেরিফায়েড ডিজিটাল ব্যাজ</h4>
+              <p data-i18n="ws_why_b2_d">সফল সমাপ্তির পর আপনার স্কিলস পাসপোর্ট আইডিতে সরাসরি ভেরিফায়েড ব্যাজ যুক্ত হয়।</p>
+            </div>
+            <div class="takeaway-box">
+              <h4 data-i18n="ws_why_b3_t">📼 লাইফটাইম রেকর্ডিং এক্সেস</h4>
+              <p data-i18n="ws_why_b3_d">লাইভ সেশনের পর ফুল হাই-ডেফিনিশন রেকর্ডিং ও রিসোর্স ফাইল লাইব্রেরিতে উন্মুক্ত থাকে।</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+              <img src="assets/logo.png" alt="Skills Passport" style="height: 52px; width: auto; border-radius: 12px; background: #FFFFFF; padding: 6px 14px; border: 1px solid rgba(31, 150, 156, 0.5); box-shadow: 0 0 18px rgba(31, 150, 156, 0.3);">
+              <p style="font-size: 0.75rem; color: var(--accent-cyan); margin: 0;">HI × AI Upskilling • Dhaka</p>
+            </div>
+            <p data-i18n="footer_desc">হিউম্যান ইন্টেলিজেন্স (HI) ও আর্টিফিশিয়াল ইন্টেলিজেন্সের (AI) সমন্বয়ে ফিউচার-রেডি ক্যারিয়ার গড়ে তোলার শীর্ষস্থানীয় এডটেক প্ল্যাটফর্ম।</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer_city">📍 ঢাকা, বাংলাদেশ • Empowering Global Professionals</p>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col1_title">কোর ফিচার</h5>
+            <ul class="footer-links">
+              <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+              <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+              <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+              <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col2_title">ওয়ার্কশপ ও B2B</h5>
+            <ul class="footer-links">
+              <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_becps">BECPS পার্টনারশিপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_sme">SME ফাউন্ডেশন ট্রেনিং</a></li>
+              <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col3_title">যোগাযোগ</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" data-i18n="comm_fb_btn">অফিসিয়াল ফেসবুক পেজ</a></li>
+              <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+              <li><a href="mailto:info@skillspassport.org">info@skillspassport.org</a></li>
+              <li><a href="#hero" data-i18n="footer_back_top">টপ-এ ফিরে যান ↑</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div data-i18n="footer_copyright">© 2026 Skills Passport (স্কিলস পাসপোর্ট). সর্বস্বত্ব সংরক্ষিত।</div>
+          <div data-i18n="footer_tagline_bottom">Human Intelligence (HI) × Artificial Intelligence (AI) Upskilling Platform</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="reg-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+        
+        <div class="badge-chip" style="margin-bottom: 12px;">
+          <span class="pulse-dot"></span>
+          <span data-i18n="modal_badge">লাইভ ওয়ার্কশপ রেজিস্ট্রেশন</span>
+        </div>
+
+        <h3 class="modal-title" id="modal-ws-name">AI-Powered Professional Workflow Mastery</h3>
+        <p class="modal-subtitle" data-i18n="modal_sub">আপনার সিট নিশ্চিত করতে নিচের তথ্যগুলো পূরণ করুন।</p>
+
+        <form id="modal-reg-form" style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="form-group">
+            <label data-i18n="modal_name">আপনার পুরো নাম (Full Name)</label>
+            <input type="text" class="form-input" placeholder="e.g. Tanvir Ahmed" required>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="modal_email">ইমেইল এড্রেস (Email Address)</label>
+            <input type="email" class="form-input" placeholder="name@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="modal_phone">মোবাইল / WhatsApp নম্বর</label>
+            <input type="tel" class="form-input" placeholder="+880 1XXXXXXXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="modal_org">আপনার বর্তমান প্রফেশন / প্রতিষ্ঠান</label>
+            <input type="text" class="form-input" placeholder="Institution / Organization" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-glow" style="margin-top: 8px;">
+            <span data-i18n="modal_submit">রেজিস্ট্রেশন কনফার্ম করুন ও পাস পান</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

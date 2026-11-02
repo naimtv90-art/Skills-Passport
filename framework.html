@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HI + AI Fusion Model | Skills Passport (স্কিলস পাসপোর্ট)</title>
+  <meta name="description" content="হিউম্যান ইন্টেলিজেন্স ও আর্টিফিশিয়াল ইন্টেলিজেন্সের অনন্য সমন্বয়। স্কিলস পাসপোর্টের মেথডলজি ও ফিউশন মডেল ফ্রেমওয়ার্ক।">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-bn">
+
+  <!-- 3D Background Canvas -->
+  <div id="bg-canvas-container"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.png" alt="Skills Passport Logo" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav_home">হোম</a></li>
+            <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকটিভস</a></li>
+            <li><a href="framework.html" class="current-page" data-i18n="nav_framework">HI + AI মডেল</a></li>
+            <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+            <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+            <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাং</button>
+            <button class="lang-btn" data-lang="en" id="lang-btn-en">EN</button>
+          </div>
+
+          <a href="passport.html" class="btn btn-primary btn-glow nav-cta-btn" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="index.html" data-i18n="nav_home">হোম</a>
+          <span class="breadcrumb-separator">/</span>
+          <span data-i18n="nav_framework">HI + AI মডেল</span>
+        </div>
+
+        <div class="badge-chip">
+          <span class="pulse-dot"></span>
+          <span data-i18n="frame_badge">স্কিলস পাসপোর্ট মেথডলজি</span>
+        </div>
+
+        <h1 class="page-hero-title" data-i18n="frame_title">
+          HI + AI <span class="gradient-text">ফিউশন মডেল</span>
+        </h1>
+        
+        <p class="page-hero-desc" data-i18n="frame_desc">
+          যেখানে মানুষের সহজাত বুদ্ধিমত্তা এবং কৃত্রিম বুদ্ধিমত্তা মিলে তৈরি হয় অনন্য দক্ষতা।
+        </p>
+      </div>
+    </section>
+
+    <!-- Framework Deep Dive -->
+    <section class="section-padding" style="padding-top: 10px;">
+      <div class="container">
+        
+        <div class="framework-container" style="margin-bottom: 50px;">
+          <div class="framework-grid">
+            
+            <div class="fusion-pillar-card">
+              <span class="pillar-badge badge-hi">HI (Human Intelligence)</span>
+              <h3 class="pillar-title" data-i18n="frame_hi_title">সহজাত মানুষের ক্ষমতা (HI)</h3>
+              <p class="pillar-desc" data-i18n="frame_hi_desc">
+                এআই টুল যত শক্তিশালীই হোক, ডিসিশন মেকিং, লিডারশিপ ও মানুষের সাথে সম্পর্কের জন্য দরকার হাই ইমোশনাল ইন্টেলিজেন্স।
+              </p>
+              <div class="pillar-skills-grid">
+                <div class="pillar-skill-tag" data-i18n="frame_hi_s1">💡 ইমোশনাল ইন্টেলিজেন্স (EQ)</div>
+                <div class="pillar-skill-tag" data-i18n="frame_hi_s2">🎯 অ্যাডাপটেবিলিটি (Adaptability)</div>
+                <div class="pillar-skill-tag" data-i18n="frame_hi_s3">🗣️ এক্সিকিউটিভ কমিউনিকেশন</div>
+                <div class="pillar-skill-tag" data-i18n="frame_hi_s4">🤝 ক্রিয়েটিভ প্রবলেম সলভিং</div>
+              </div>
+            </div>
+
+            <div class="fusion-middle-connector">
+              <div class="fusion-connector-line"></div>
+              <div class="fusion-multiply-symbol">×</div>
+            </div>
+
+            <div class="fusion-pillar-card">
+              <span class="pillar-badge badge-ai">AI (Artificial Intelligence)</span>
+              <h3 class="pillar-title" data-i18n="frame_ai_title">এআই ও অটোমেশন শক্তি (AI)</h3>
+              <p class="pillar-desc" data-i18n="frame_ai_desc">
+                দৈনন্দিন পুনরাবৃত্তিমূলক কাজ স্বয়ংক্রিয় করা এবং স্মার্ট এআই কো-পাইলট দিয়ে নিজের কার্যক্ষমতা বহুগুণ বাড়িয়ে নেওয়া।
+              </p>
+              <div class="pillar-skills-grid">
+                <div class="pillar-skill-tag" data-i18n="frame_ai_s1">⚡ প্রম্পট ইঞ্জিনিয়ারিং ২.০</div>
+                <div class="pillar-skill-tag" data-i18n="frame_ai_s2">📊 ডেটা-ড্রিভেন ইনসাইট</div>
+                <div class="pillar-skill-tag" data-i18n="frame_ai_s3">⚙️ ওয়ার্কফ্লো অটোমেশন</div>
+                <div class="pillar-skill-tag" data-i18n="frame_ai_s4">🎨 মাল্টিমডাল এআই টুলস</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="fusion-tagline-bar">
+            <span data-i18n="frame_result_bar">🚀 <strong>রেজাল্ট:</strong> ১০ গুণ দ্রুত এক্সিকিউশন + গভীর স্ট্র্যাটেজিক চিন্তাশক্তি = অপ্রতিদ্বন্দ্বী আধুনিক প্রফেশনাল</span>
+          </div>
+        </div>
+
+        <!-- Breakdown Details -->
+        <div class="detail-box-card">
+          <h3 data-i18n="frame_mult_title">কেন HI এবং AI এর গুণফল (Multiplication) আবশ্যক?</h3>
+          <p data-i18n="frame_mult_desc">
+            বিশ্বজুড়ে কাজের ধরণ বদলে গেছে। একা শুধুমাত্র এআই দিয়ে যেমন কোনো মানুষ সফল হতে পারে না, ঠিক তেমনই এআই না জেনে শুধুই গতানুগতিক দক্ষতায় টিকে থাকা সম্ভব নয়।
+          </p>
+
+          <div class="key-takeaway-grid">
+            <div class="takeaway-box">
+              <h4 data-i18n="frame_mult_b1_t">🤖 শুধু এআই জানলে কী ঘটে?</h4>
+              <p data-i18n="frame_mult_b1_d">এআই আউটপুট দিতে পারে, কিন্তু তার নৈতিকতা, প্রাতিষ্ঠানিক গ্রহণযোগ্যতা ও মানবিক স্পর্শ যাচাই করার মত বিচারবুদ্ধি থাকে না।</p>
+            </div>
+            <div class="takeaway-box">
+              <h4 data-i18n="frame_mult_b2_t">🧠 শুধু সফট স্কিলস জানলে কী ঘটে?</h4>
+              <p data-i18n="frame_mult_b2_d">যোগাযোগ ভালো হলেও আধুনিক এআই অটোমেশনের যুগে কাজের গতি ও ডেটা প্রসেসিংয়ে অন্যরা তাকে বহুদূর পেছনে ফেলে দেয়।</p>
+            </div>
+            <div class="takeaway-box">
+              <h4 data-i18n="frame_mult_b3_t">🌟 HI × AI সমন্বয় হলে কী ঘটে?</h4>
+              <p data-i18n="frame_mult_b3_d">দ্রুততম সময়ে নিখুঁত এক্সিকিউশন এবং উচ্চতর মানবিক সিদ্ধান্তের সমন্বয়ে প্রতিষ্ঠান ও ক্যারিয়ারের শীর্ষ নেতৃত্ব অর্জন করা যায়।</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="passport.html" class="btn btn-primary btn-glow" style="margin-right: 14px;" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+          <a href="workshops.html" class="btn btn-secondary" data-i18n="hero_btn_explore">ওয়ার্কশপ এক্সপ্লোর করুন</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+              <img src="assets/logo.png" alt="Skills Passport" style="height: 52px; width: auto; border-radius: 12px; background: #FFFFFF; padding: 6px 14px; border: 1px solid rgba(31, 150, 156, 0.5); box-shadow: 0 0 18px rgba(31, 150, 156, 0.3);">
+              <p style="font-size: 0.75rem; color: var(--accent-cyan); margin: 0;">HI × AI Upskilling • Dhaka</p>
+            </div>
+            <p data-i18n="footer_desc">হিউম্যান ইন্টেলিজেন্স (HI) ও আর্টিফিশিয়াল ইন্টেলিজেন্সের (AI) সমন্বয়ে ফিউচার-রেডি ক্যারিয়ার গড়ে তোলার শীর্ষস্থানীয় এডটেক প্ল্যাটফর্ম।</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer_city">📍 ঢাকা, বাংলাদেশ • Empowering Global Professionals</p>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col1_title">কোর ফিচার</h5>
+            <ul class="footer-links">
+              <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+              <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+              <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+              <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col2_title">ওয়ার্কশপ ও B2B</h5>
+            <ul class="footer-links">
+              <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_becps">BECPS পার্টনারশিপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_sme">SME ফাউন্ডেশন ট্রেনিং</a></li>
+              <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col3_title">যোগাযোগ</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" data-i18n="comm_fb_btn">অফিসিয়াল ফেসবুক পেজ</a></li>
+              <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+              <li><a href="mailto:info@skillspassport.org">info@skillspassport.org</a></li>
+              <li><a href="#hero" data-i18n="footer_back_top">টপ-এ ফিরে যান ↑</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div data-i18n="footer_copyright">© 2026 Skills Passport (স্কিলস পাসপোর্ট). সর্বস্বত্ব সংরক্ষিত।</div>
+          <div data-i18n="footer_tagline_bottom">Human Intelligence (HI) × Artificial Intelligence (AI) Upskilling Platform</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

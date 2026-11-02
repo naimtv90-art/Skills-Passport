@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Pathways (B2B & B2C) | Skills Passport (স্কিলস পাসপোর্ট)</title>
+  <meta name="description" content="ফ্রেশ গ্র্যাজুয়েট, স্কুল, এডুকেশনাল সোসাইটি (BECPS) এবং কর্পোরেট হাউজের (SME Foundation) জন্য স্কিলস পাসপোর্টের বিশেষায়িত লার্নিং পাথওয়েজ।">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lang-bn">
+
+  <!-- 3D Background Canvas -->
+  <div id="bg-canvas-container"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Navbar -->
+    <header class="navbar" id="main-nav">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-link">
+          <img src="assets/logo.png" alt="Skills Passport Logo" class="brand-logo-img">
+        </a>
+
+        <nav class="nav-links-wrapper">
+          <ul class="nav-menu">
+            <li><a href="index.html" data-i18n="nav_home">হোম</a></li>
+            <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকটিভস</a></li>
+            <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+            <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+            <li><a href="pathways.html" class="current-page" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+            <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="bn" id="lang-btn-bn">বাং</button>
+            <button class="lang-btn" data-lang="en" id="lang-btn-en">EN</button>
+          </div>
+
+          <a href="passport.html" class="btn btn-primary btn-glow nav-cta-btn" data-i18n="nav_cta">পাসপোর্ট তৈরি করুন</a>
+
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <div class="breadcrumb-nav">
+          <a href="index.html" data-i18n="nav_home">হোম</a>
+          <span class="breadcrumb-separator">/</span>
+          <span data-i18n="nav_pathways">পাথওয়েজ</span>
+        </div>
+
+        <div class="badge-chip">
+          <span class="pulse-dot"></span>
+          <span data-i18n="path_badge">স্ট্র্যাটেজিক পার্টনারশিপ</span>
+        </div>
+
+        <h1 class="page-hero-title" data-i18n="path_title">
+          কাদের জন্য আমাদের <span class="gradient-text">পাথওয়েজ?</span>
+        </h1>
+        
+        <p class="page-hero-desc" data-i18n="path_subtitle">
+          B2C শিক্ষার্থী থেকে শুরু করে B2B কর্পোরেট অর্গানাইজেশন পর্যন্ত সবার জন্য কাস্টমাইজড সমাধান।
+        </p>
+      </div>
+    </section>
+
+    <!-- Pathways Content Section -->
+    <section class="section-padding" style="padding-top: 10px;">
+      <div class="container">
+        
+        <!-- Pathway Nav Tabs -->
+        <div class="pathways-tabs-nav">
+          <button class="path-tab-btn active" data-target="tab-students" data-i18n="path_tab_1">🎓 ফ্রেশ গ্র্যাজুয়েট ও তরুণ প্রফেশনাল</button>
+          <button class="path-tab-btn" data-target="tab-institutions" data-i18n="path_tab_2">🏫 স্কুল ও এডুকেশনাল সোসাইটি (BECPS)</button>
+          <button class="path-tab-btn" data-target="tab-corporates" data-i18n="path_tab_3">🏢 কর্পোরেট অর্গানাইজেশন ও SME ফাউন্ডেশন</button>
+        </div>
+
+        <!-- Tab 1: Fresh Grads & Students -->
+        <div class="pathway-content-pane active" id="tab-students">
+          <div class="pathway-card-grid">
+            <div class="pathway-info-col">
+              <h3 data-i18n="path_1_title">ক্যাম্পাস-টু-কর্পোরেট এক্সেলেশন</h3>
+              <p data-i18n="path_1_desc">
+                বিশ্ববিদ্যালয়ের সনাতনী সিলেবাস ও বর্তমান এআই জবের বাস্তব চাহিদার মধ্যে যে বিস্তর দূরত্ব রয়েছে, তা ঘুচিয়ে দিয়ে আত্মবিশ্বাসী ক্যারিয়ার নিশ্চিত করা।
+              </p>
+              <ul class="pathway-benefits-list">
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_1_b1">প্র্যাকটিক্যাল প্রজেক্ট ও রিয়েল পোর্টফোলিও বিল্ডিং</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_1_b2">এআই ও প্রম্পটিং টুল দিয়ে দ্রুত স্মার্ট আউটপুট বের করা</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_1_b3">ইন্টারভিউ রেজিলিয়েন্স ও কনফিডেন্ট স্পিকিং আর্ট</span>
+                </li>
+              </ul>
+              <a href="workshops.html" class="btn btn-primary btn-glow" data-i18n="path_1_btn">ওয়ার্কশপ শিডিউল দেখুন</a>
+            </div>
+            <div class="pathway-visual-col">
+              <img src="assets/skills_passport_hero.jpg" alt="Student to Professional Accelerator">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Schools & Educational Societies (BECPS) -->
+        <div class="pathway-content-pane" id="tab-institutions">
+          <div class="pathway-card-grid">
+            <div class="pathway-info-col">
+              <h3 data-i18n="path_2_title">স্কুল ও সোসাইটি লেভেল পার্টনারশিপ (MoU)</h3>
+              <p data-i18n="path_2_desc">
+                বিভিন্ন নামকরা স্কুল, কলেজ এবং এডুকেশনাল সোসাইটি (যেমন- BECPS) এর সাথে আনুষ্ঠানিক মেমোরেন্ডাম অব আন্ডারস্ট্যান্ডিং (MoU) স্বাক্ষরের মাধ্যমে তরুণদের শুরু থেকেই ফিউচার-রেডি করা।
+              </p>
+              <ul class="pathway-benefits-list">
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_2_b1">ক্যাম্পাস-ওয়াইড হ্যান্ডস-অন এআই ও স্কিলস বুটক্যাম্প</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_2_b2">স্টুডেন্ট লিডারশিপ ও এডুকেশনাল সোসাইটি এনগেজমেন্ট</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_2_b3">স্কুল টু কর্পোরেট ক্যারিয়ার রোডম্যাপ সেমিনার</span>
+                </li>
+              </ul>
+              <a href="partnerships.html" class="btn btn-primary btn-glow" data-i18n="path_2_btn">MoU পার্টনারশিপ প্রপোজাল দিন</a>
+            </div>
+            <div class="pathway-visual-col">
+              <img src="assets/skills_passport_workshop.jpg" alt="BECPS and Educational Societies Partnership">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Corporate & SME Foundation -->
+        <div class="pathway-content-pane" id="tab-corporates">
+          <div class="pathway-card-grid">
+            <div class="pathway-info-col">
+              <h3 data-i18n="path_3_title">কর্পোরেট ট্রেইনিং লিডারশিপ ও SME বুটক্যাম্প</h3>
+              <p data-i18n="path_3_desc">
+                দেশের শীর্ষস্থানীয় করপোরেট হাউজ, স্টার্টআপ এবং প্রতিষ্ঠানগুলোর (যেমন- SME ফাউন্ডেশন) সাথে ট্রেনিং ও মেন্টরশিপ পার্টনার হিসেবে কাজ করে উৎপাদনশীলতা বৃদ্ধি করা।
+              </p>
+              <ul class="pathway-benefits-list">
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_3_b1">কর্পোরেট ওয়ার্কফ্লোতে এআই টুলস ইন্টিগ্রেশন ট্রেইনিং</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_3_b2">এক্সিকিউটিভদের ইমোশনাল ইন্টেলিজেন্স ও টিম লিডারশিপ</span>
+                </li>
+                <li>
+                  <span class="benefit-bullet-icon">✓</span>
+                  <span data-i18n="path_3_b3">টেইলর-মেড কর্পোরেট আপস্কিলিং কন্ট্রাক্ট ও MoU</span>
+                </li>
+              </ul>
+              <a href="partnerships.html" class="btn btn-primary btn-glow" data-i18n="path_3_btn">কর্পোরেট ট্রেইনিং রিকোয়েস্ট করুন</a>
+            </div>
+            <div class="pathway-visual-col">
+              <img src="assets/skills_passport_workshop.jpg" alt="Corporate Training Leadership SME Foundation">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+              <img src="assets/logo.png" alt="Skills Passport" style="height: 52px; width: auto; border-radius: 12px; background: #FFFFFF; padding: 6px 14px; border: 1px solid rgba(31, 150, 156, 0.5); box-shadow: 0 0 18px rgba(31, 150, 156, 0.3);">
+              <p style="font-size: 0.75rem; color: var(--accent-cyan); margin: 0;">HI × AI Upskilling • Dhaka</p>
+            </div>
+            <p data-i18n="footer_desc">হিউম্যান ইন্টেলিজেন্স (HI) ও আর্টিফিশিয়াল ইন্টেলিজেন্সের (AI) সমন্বয়ে ফিউচার-রেডি ক্যারিয়ার গড়ে তোলার শীর্ষস্থানীয় এডটেক প্ল্যাটফর্ম।</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="footer_city">📍 ঢাকা, বাংলাদেশ • Empowering Global Professionals</p>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col1_title">কোর ফিচার</h5>
+            <ul class="footer-links">
+              <li><a href="objectives.html" data-i18n="nav_objectives">অবজেকティブস</a></li>
+              <li><a href="framework.html" data-i18n="nav_framework">HI + AI মডেল</a></li>
+              <li><a href="passport.html" data-i18n="nav_generator">পাসপোর্ট আইডি</a></li>
+              <li><a href="pathways.html" data-i18n="nav_pathways">পাথওয়েজ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col2_title">ওয়ার্কশপ ও B2B</h5>
+            <ul class="footer-links">
+              <li><a href="workshops.html" data-i18n="nav_workshops">লাইভ ওয়ার্কশপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_becps">BECPS পার্টনারশিপ</a></li>
+              <li><a href="partnerships.html" data-i18n="partner_sme">SME ফাউন্ডেশন ট্রেনিং</a></li>
+              <li><a href="partnerships.html" data-i18n="nav_partners">MoU ও পার্টনারস</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="footer-title" data-i18n="footer_col3_title">যোগাযোগ</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" data-i18n="comm_fb_btn">অফিসিয়াল ফেসবুক পেজ</a></li>
+              <li><a href="community.html" data-i18n="nav_community">কমিউনিটি</a></li>
+              <li><a href="mailto:info@skillspassport.org">info@skillspassport.org</a></li>
+              <li><a href="#hero" data-i18n="footer_back_top">টপ-এ ফিরে যান ↑</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div data-i18n="footer_copyright">© 2026 Skills Passport (স্কিলস পাসপোর্ট). সর্বস্বত্ব সংরক্ষিত।</div>
+          <div data-i18n="footer_tagline_bottom">Human Intelligence (HI) × Artificial Intelligence (AI) Upskilling Platform</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/three-scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
