@@ -1084,6 +1084,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Dark / Light Theme Toggle Button
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  const sunIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  function applyTheme(theme, playSound = false) {
+    const isLight = theme === 'light';
+    document.documentElement.classList.toggle('light-mode', isLight);
+    document.body.classList.toggle('light-mode', isLight);
+    localStorage.setItem('sp_theme', isLight ? 'light' : 'dark');
+    if (themeBtn) {
+      themeBtn.innerHTML = isLight ? moonIcon : sunIcon;
+      themeBtn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    }
+    if (playSound) sfx.playChime();
+  }
+
+  const savedTheme = localStorage.getItem('sp_theme') || 'dark';
+  applyTheme(savedTheme, false);
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+      applyTheme(nextTheme, true);
+    });
+  }
+
   // Mobile Menu Drawer
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const navMenu = document.querySelector('.nav-menu');
