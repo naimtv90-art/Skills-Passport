@@ -164,7 +164,7 @@
 
         <!-- Direct Contact Info Card -->
         <div class="detail-box-card">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div class="contact-split-grid">
             <div>
               <h3 data-i18n="comm_hq_title">হেডকোয়ার্টার ও সরাসরি যোগাযোগ</h3>
               <p data-i18n="comm_hq_desc">
@@ -172,15 +172,15 @@
               </p>
               
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 20px;">
-                <li style="display: flex; gap: 12px; color: #E2E8F0;">
+                <li style="display: flex; gap: 12px; color: #E2E8F0; word-break: break-word;">
                   <span>📍</span>
                   <span data-i18n="comm_hq_loc"><strong>অবস্থান:</strong> ঢাকা, বাংলাদেশ (Dhaka, Bangladesh)</span>
                 </li>
-                <li style="display: flex; gap: 12px; color: #E2E8F0;">
+                <li style="display: flex; gap: 12px; color: #E2E8F0; word-break: break-word;">
                   <span>📧</span>
                   <span data-i18n="comm_hq_email"><strong>ইমেইল:</strong> info@skillspassport.org</span>
                 </li>
-                <li style="display: flex; gap: 12px; color: #E2E8F0;">
+                <li style="display: flex; gap: 12px; color: #E2E8F0; word-break: break-word;">
                   <span>🌐</span>
                   <span data-i18n="comm_hq_page"><strong>অফিসিয়াল পেজ:</strong> <a href="https://www.facebook.com/share/19V3SoLGBw/" target="_blank" style="color: var(--accent-cyan);">facebook.com/SkillsPassportBD</a></span>
                 </li>
@@ -188,7 +188,7 @@
             </div>
 
             <!-- Quick Inquiry Box -->
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 30px;">
+            <div class="contact-inquiry-box">
               <h4 style="color: #fff; margin-bottom: 16px;" data-i18n="comm_form_title">সরাসরি বার্তা পাঠান</h4>
               <form onsubmit="event.preventDefault(); alert(window.currentLang === 'en' ? 'Thank you! Your message has been received.' : 'ধন্যবাদ! আপনার বার্তাটি গৃহীত হয়েছে।'); this.reset();" style="display: flex; flex-direction: column; gap: 14px;">
                 <input type="text" class="form-input" data-i18n-placeholder="comm_ph_name" placeholder="আপনার নাম" required>
