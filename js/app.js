@@ -744,13 +744,231 @@ function initPassportGenerator() {
     });
   });
 
+  function roundRectPath(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  function downloadPassportCardAsPNG(passportId) {
+    const scale = 2;
+    const width = 360 * scale;
+    const height = 520 * scale;
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+
+    const name = (nameInput && nameInput.value.trim()) || 'Tanvir Ahmed';
+    const role = (trackSelect && trackSelect.options[trackSelect.selectedIndex].text) || '💼 Corporate Executive';
+    const locationText = currentLang === 'bn' ? 'ঢাকা, বাংলাদেশ' : 'DHAKA, BANGLADESH';
+
+    const drawCard = (logoImg) => {
+      ctx.clearRect(0, 0, width, height);
+
+      const pad = 16;
+      const cardX = pad;
+      const cardY = pad;
+      const cardW = width - pad * 2;
+      const cardH = height - pad * 2;
+      const radius = 28 * scale;
+
+      // Card background gradient
+      ctx.save();
+      roundRectPath(ctx, cardX, cardY, cardW, cardH, radius);
+      const bgGrad = ctx.createLinearGradient(cardX, cardY, cardX + cardW, cardY + cardH);
+      bgGrad.addColorStop(0, '#161036');
+      bgGrad.addColorStop(0.55, '#0D1025');
+      bgGrad.addColorStop(1, '#0A0D1E');
+      ctx.fillStyle = bgGrad;
+      ctx.shadowColor = 'rgba(0, 242, 254, 0.35)';
+      ctx.shadowBlur = 24;
+      ctx.fill();
+      ctx.restore();
+
+      // Subtle holographic glare overlay
+      ctx.save();
+      roundRectPath(ctx, cardX, cardY, cardW, cardH, radius);
+      ctx.clip();
+      const glareGrad = ctx.createLinearGradient(cardX, cardY, cardX + cardW, cardY + cardH);
+      glareGrad.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+      glareGrad.addColorStop(0.4, 'rgba(255, 255, 255, 0)');
+      glareGrad.addColorStop(0.65, 'rgba(0, 242, 254, 0.08)');
+      glareGrad.addColorStop(1, 'rgba(138, 43, 226, 0.12)');
+      ctx.fillStyle = glareGrad;
+      ctx.fillRect(cardX, cardY, cardW, cardH);
+      ctx.restore();
+
+      // Cyan glowing border
+      ctx.save();
+      roundRectPath(ctx, cardX, cardY, cardW, cardH, radius);
+      ctx.lineWidth = 3.5;
+      ctx.strokeStyle = 'rgba(0, 242, 254, 0.65)';
+      ctx.stroke();
+      ctx.restore();
+
+      // Top Header: SKILLS PASSPORT BD & ID
+      const headerY = cardY + 42 * scale;
+      ctx.font = `800 ${15 * scale}px Outfit, sans-serif`;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.textAlign = 'left';
+      ctx.fillText('SKILLS PASSPORT BD', cardX + 26 * scale, headerY);
+
+      ctx.font = `600 ${13 * scale}px monospace`;
+      ctx.fillStyle = '#00F2FE';
+      ctx.textAlign = 'right';
+      ctx.fillText(passportId, cardX + cardW - 26 * scale, headerY);
+
+      // Center Avatar Circle with Cyan Glow
+      const centerX = width / 2;
+      const avatarY = cardY + 158 * scale;
+      const avatarR = 46 * scale;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(centerX, avatarY, avatarR, 0, Math.PI * 2);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.shadowColor = 'rgba(0, 242, 254, 0.65)';
+      ctx.shadowBlur = 28;
+      ctx.fill();
+      ctx.lineWidth = 3 * scale;
+      ctx.strokeStyle = '#00F2FE';
+      ctx.stroke();
+      ctx.restore();
+
+      if (logoImg) {
+        const iconSize = avatarR * 1.45;
+        ctx.drawImage(logoImg, centerX - iconSize / 2, avatarY - iconSize / 2, iconSize, iconSize);
+      }
+
+      // Holder Name
+      const nameY = avatarY + avatarR + 36 * scale;
+      ctx.font = `800 ${22 * scale}px Outfit, "Hind Siliguri", sans-serif`;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.textAlign = 'center';
+      ctx.fillText(name, centerX, nameY);
+
+      // Holder Career Track Role
+      const roleY = nameY + 26 * scale;
+      ctx.font = `600 ${14.5 * scale}px Outfit, "Hind Siliguri", sans-serif`;
+      ctx.fillStyle = '#38BDF8';
+      ctx.fillText(role, centerX, roleY);
+
+      // Skills Chips (Wrapped Rows)
+      ctx.font = `600 ${12 * scale}px Outfit, sans-serif`;
+      const chipPadX = 12 * scale;
+      const chipH = 26 * scale;
+      const chipGapX = 8 * scale;
+      const chipGapY = 10 * scale;
+      const maxRowWidth = cardW - 48 * scale;
+
+      const rows = [];
+      let currentRow = [];
+      let currentRowWidth = 0;
+
+      selectedSkills.forEach(skill => {
+        const textW = ctx.measureText(skill).width;
+        const chipW = textW + chipPadX * 2;
+        if (currentRow.length > 0 && currentRowWidth + chipGapX + chipW > maxRowWidth) {
+          rows.push({ items: currentRow, width: currentRowWidth });
+          currentRow = [{ text: skill, width: chipW }];
+          currentRowWidth = chipW;
+        } else {
+          if (currentRow.length > 0) currentRowWidth += chipGapX;
+          currentRow.push({ text: skill, width: chipW });
+          currentRowWidth += chipW;
+        }
+      });
+      if (currentRow.length > 0) {
+        rows.push({ items: currentRow, width: currentRowWidth });
+      }
+
+      let chipStartY = roleY + 24 * scale;
+      rows.forEach(row => {
+        let startX = centerX - row.width / 2;
+        row.items.forEach(item => {
+          ctx.save();
+          roundRectPath(ctx, startX, chipStartY, item.width, chipH, 6 * scale);
+          ctx.fillStyle = 'rgba(138, 43, 226, 0.28)';
+          ctx.fill();
+          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = 'rgba(138, 43, 226, 0.55)';
+          ctx.stroke();
+          ctx.fillStyle = '#E2E8F0';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(item.text, startX + item.width / 2, chipStartY + chipH / 2 + 1);
+          ctx.restore();
+          startX += item.width + chipGapX;
+        });
+        chipStartY += chipH + chipGapY;
+      });
+
+      // Footer Divider Line
+      const footerLineY = cardY + cardH - 72 * scale;
+      ctx.beginPath();
+      ctx.moveTo(cardX + 24 * scale, footerLineY);
+      ctx.lineTo(cardX + cardW - 24 * scale, footerLineY);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Footer Left Status Box
+      ctx.textAlign = 'left';
+      ctx.font = `600 ${11.5 * scale}px Outfit, sans-serif`;
+      ctx.fillStyle = '#64748B';
+      ctx.fillText('HI + AI VERIFIED', cardX + 26 * scale, footerLineY + 26 * scale);
+
+      ctx.font = `700 ${14 * scale}px "Hind Siliguri", Outfit, sans-serif`;
+      ctx.fillStyle = '#00F5A0';
+      ctx.fillText(locationText, cardX + 26 * scale, footerLineY + 48 * scale);
+
+      // Footer Right Barcode
+      ctx.textAlign = 'right';
+      ctx.font = `600 ${14 * scale}px monospace`;
+      ctx.fillStyle = '#94A3B8';
+      ctx.fillText('||| | |||| | |||', cardX + cardW - 26 * scale, footerLineY + 38 * scale);
+
+      // Trigger PNG Download
+      const safeName = name.replace(/[^a-zA-Z0-9_-]/g, '-') || 'Holder';
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = `Skills-Passport-${safeName}-${passportId}.png`;
+      link.href = dataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => drawCard(img);
+    img.onerror = () => drawCard(null);
+    img.src = 'assets/logo-icon.png';
+  }
+
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
       sfx.playChime();
       const randomId = 'SP-2026-BD' + Math.floor(1000 + Math.random() * 9000);
+      const cardIdEl = document.getElementById('gen-card-id');
+      if (cardIdEl) cardIdEl.textContent = randomId;
+      const verifyInputEl = document.getElementById('verify-input');
+      if (verifyInputEl) verifyInputEl.value = randomId;
+
+      downloadPassportCardAsPNG(randomId);
+
       showToast(currentLang === 'bn' 
-        ? `🎉 ডিজিটাল স্কিলস পাসপোর্ট আইডি ইস্যু হয়েছে! (${randomId})`
-        : `🎉 Digital Skills Passport ID successfully issued! (${randomId})`
+        ? `🎉 ডিজিটাল স্কিলস পাসপোর্ট PNG আকারে ডাউনলোড হয়েছে! (${randomId})`
+        : `🎉 Digital Skills Passport downloaded as PNG! (${randomId})`
       );
     });
   }
